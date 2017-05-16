@@ -8,14 +8,35 @@ import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
+import android.widget.ListView;
 import android.widget.Toast;
 
+import java.util.ArrayList;
+
 public class StalkActivity extends AppCompatActivity {
+
+    private FdListAdapter mFdListAdapter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_stalk);
+
+        // Set up friends ListView
+        ListView fdsListView = (ListView) findViewById(R.id.friend_listview);
+
+        // TEMP dummy friend list
+        ArrayList<String> fds = new ArrayList<>();
+        fds.add("Aaron");
+        fds.add("Energy");
+        fds.add("Kalok");
+        fds.add("No");
+        fds.add("Joker");
+        fds.add("Sam");
+
+        // Set up FdListAdapter on the friends ListView
+        mFdListAdapter = new FdListAdapter(this, fds);
+        fdsListView.setAdapter(mFdListAdapter);
     }
 
     @Override
