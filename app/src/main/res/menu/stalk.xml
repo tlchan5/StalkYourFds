@@ -11,4 +11,9 @@
         android:id="@+id/menu_update"
         android:title="Update account"
         app:showAsAction="never" />
+    <item
+        android:id="@+id/menu_logout"
+        android:title="Logout"
+        android:icon="@drawable/ic_log_out"
+        app:showAsAction="always" />
 </menu>
