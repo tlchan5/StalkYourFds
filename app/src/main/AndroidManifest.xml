@@ -24,8 +24,8 @@
         <activity
             android:name=".RegisterActivity"
             android:label="Register"
-            android:parentActivityName=".MainActivity">
-        </activity>
+            android:parentActivityName=".MainActivity"></activity>
+        <activity android:name=".StalkActivity"></activity>
     </application>
 
 </manifest>
