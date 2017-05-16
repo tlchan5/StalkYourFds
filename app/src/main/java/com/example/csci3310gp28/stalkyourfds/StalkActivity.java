@@ -1,5 +1,6 @@
 package com.example.csci3310gp28.stalkyourfds;
 
+import android.content.Intent;
 import android.graphics.Color;
 import android.graphics.PorterDuff;
 import android.graphics.drawable.Drawable;
@@ -31,6 +32,10 @@ public class StalkActivity extends AppCompatActivity {
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         switch(item.getItemId()) {
+            case R.id.menu_chatroom:
+                // Temporary code to chatroom
+                Intent chatroomIntent = new Intent(StalkActivity.this, ChatroomActivity.class);
+                startActivity(chatroomIntent);
             case R.id.menu_add:
                 return true;
             case R.id.menu_update:
