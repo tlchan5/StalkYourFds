@@ -36,6 +36,20 @@ public class BeaconController {
                 cbi.onRanged(myBeacons);
             }
         });
+
+        beaconManager.setMonitoringListener(new BeaconManager.MonitoringListener() {
+            @Override
+            public void onEnteredRegion(Region region, List<Beacon> beacons) {
+                myBeacons.clear();
+                myBeacons.addAll(beacons);
+                cbi.onEntered(myBeacons);
+            }
+
+            @Override
+            public void onExitedRegion(Region region) {
+                cbi.onExit();
+            }
+        });
     }
 
     public BeaconManager getBeaconManager(){

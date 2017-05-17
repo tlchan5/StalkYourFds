@@ -10,4 +10,6 @@ import java.util.ArrayList;
 
 public interface CallbackInterface{
     void onRanged(ArrayList<Beacon> beacons);
+    void onEntered(ArrayList<Beacon> beacons);
+    void onExit();
 }
