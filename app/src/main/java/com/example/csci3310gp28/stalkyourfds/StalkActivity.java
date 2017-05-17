@@ -5,6 +5,7 @@ import android.graphics.PorterDuff;
 import android.graphics.drawable.Drawable;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
@@ -15,6 +16,7 @@ import java.util.ArrayList;
 
 public class StalkActivity extends AppCompatActivity {
 
+    private static final String TAG = StalkActivity.class.getSimpleName();
     private FdListAdapter mFdListAdapter;
 
     @Override
@@ -26,13 +28,14 @@ public class StalkActivity extends AppCompatActivity {
         ListView fdsListView = (ListView) findViewById(R.id.friend_listview);
 
         // TEMP dummy friend list
-        ArrayList<String> fds = new ArrayList<>();
-        fds.add("Aaron");
-        fds.add("Energy");
-        fds.add("Kalok");
-        fds.add("No");
-        fds.add("Joker");
-        fds.add("Sam");
+        ArrayList<Friend> fds = new ArrayList<>();
+        fds.add(new Friend("Aaron", "", "SHB 123"));
+        fds.add(new Friend("Energy", null, "SHB 123"));
+        fds.add(new Friend("Kalok", null, "SHB 123"));
+        fds.add(new Friend("No", null, "SHB 123"));
+        fds.add(new Friend("Joker", null, "SHB 924"));
+        fds.add(new Friend("Sam", null, "SHB 924"));
+        fds.add(new Friend("DR S.H.OR", "http://appsrv.cse.cuhk.edu.hk/~shor/index_files/image003.jpg", "SHB 127"));
 
         // Set up FdListAdapter on the friends ListView
         mFdListAdapter = new FdListAdapter(this, fds);
@@ -80,4 +83,6 @@ public class StalkActivity extends AppCompatActivity {
             icon.setColorFilter(color, PorterDuff.Mode.SRC_ATOP);
         }
     }
+
+
 }
