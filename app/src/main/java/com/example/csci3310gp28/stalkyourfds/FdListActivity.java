@@ -21,10 +21,10 @@ public class FdListActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_fd_list);
+        setContentView(R.layout.fragment_fd_list);
 
         // Set up friends ListView
-        ListView fdsListView = (ListView) findViewById(R.id.friend_listview);
+        ListView fdsListView = (ListView) findViewById(R.id.friend_listview_activity);
 
         // TEMP dummy friend list
         ArrayList<Friend> fds = new ArrayList<>();
